@@ -1,0 +1,42 @@
+[project]
+name = "colorbreak"
+version = "0.2.0"
+description = "Break a PrusaSlicer colormix-painted surface into random patches of neighbouring mix ratios"
+readme = "README.md"
+license = { text = "Unlicense" }
+authors = [{ name = "Vit Fojtik" }]
+requires-python = ">=3.10"
+keywords = ["3d-printing", "prusaslicer", "multi-material", "colormix", "3mf"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+]
+dependencies = ["numpy>=1.26", "scipy>=1.11"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.5"]
+
+[project.scripts]
+colorbreak = "colorbreak.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["colorbreak"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

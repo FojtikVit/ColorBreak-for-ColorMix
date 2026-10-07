@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Models, outputs and the PrusaSlicer source tree are not part of the repository
+*.3mf
+*.ply
+*.png
+out/
+PrusaSlicer-*/
+
+# Windows/WSL metadata
+*:Zone.Identifier
